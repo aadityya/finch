@@ -27,8 +27,6 @@ public class TimelineController {
 
         LOGGER.debug("TimelineController");
 
-        System.out.println("This instance of Twitter");
-
         List<Tweet> tweets = timelineService.getTimeLineByUser(userid);
 
         TimelineResponseVO responseVO = new TimelineResponseVO();
