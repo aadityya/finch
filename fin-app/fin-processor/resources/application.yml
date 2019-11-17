@@ -13,3 +13,7 @@ logging:
   level:
     org.springframework.web: DEBUG
     com.finch: DEBUG
+
+feign:
+  hystrix:
+    enabled: true

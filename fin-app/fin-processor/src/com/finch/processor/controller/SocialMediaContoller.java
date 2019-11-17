@@ -1,6 +1,7 @@
 package com.finch.processor.controller;
 
 import com.finch.common.vo.TimelineResponseVO;
+import com.finch.processor.service.SocialMediaService;
 import com.finch.processor.service.TwitterClient;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -12,19 +13,19 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping("/user/{userid}")
-public class TwitterContoller {
+public class SocialMediaContoller {
 
-    private static Logger LOGGER = LoggerFactory.getLogger(TwitterContoller.class);
+    private static Logger LOGGER = LoggerFactory.getLogger(SocialMediaContoller.class);
 
     @Autowired
-    TwitterClient twitterClient;
+    SocialMediaService socialMediaService;
 
     @GetMapping(value = "/timeline")
     private TimelineResponseVO getTimeline(@PathVariable String userid) {
 
-        LOGGER.debug("Twitter Controller");
+        LOGGER.debug("SocialMediaContoller Controller");
 
-        TimelineResponseVO timelineResponseVO = twitterClient.getTimeline(userid);
+        TimelineResponseVO timelineResponseVO = socialMediaService.getTimeline(userid);
 
         return timelineResponseVO;
     }
