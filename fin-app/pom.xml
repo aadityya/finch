@@ -83,8 +83,7 @@
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
 				<configuration>
-					<mainClass>com.finch.twitter.Application</mainClass>
-					<layout>ZIP</layout>
+					<outputDirectory>../../dist</outputDirectory>
 				</configuration>
 			</plugin>
 		</plugins>
